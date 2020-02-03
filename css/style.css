@@ -214,6 +214,10 @@ a#dash1 {
   background: #FFE7BD;
 }
 
+.market-active {
+  transform: rotate(180deg);
+}
+
 #content-dashboard .selling-body .img-product {
   width: 65px;
 }

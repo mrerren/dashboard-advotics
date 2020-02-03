@@ -35,6 +35,12 @@ bgProduct.forEach((e) => {
     });
 });
 
+// market collapse 
+const btnMarket = document.querySelector('#btn-market');
+btnMarket.addEventListener('click', () => {
+    btnMarket.classList.toggle('market-active');
+});
+
 // date range picker
 $('#picker').daterangepicker({
     startDate: moment().subtract(6, 'days'),
