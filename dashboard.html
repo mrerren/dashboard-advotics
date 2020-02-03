@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard Advotics</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/all.css" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Source+Sans+Pro:300,400,600&display=swap"
+        rel="stylesheet">
+
+    <!-- date range picker -->
+    <link rel="stylesheet" href="css/daterangepicker.css" />
+
+    <!-- My Css -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <section id="nav">
+        <div class="row px-5 py-3">
+            <div class="col-lg-6">
+                <div class="row">
+                    <img class="pb-1" src="logo/advotics.jpg" alt="logo">
+                    <small class="align-self-end px-2 text-left">
+                        powered by <img src="logo/advotics-small.jpg" alt="logo-small">
+                    </small>
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-end">
+                <div class="col-lg-3 user justify-content-end">
+                    <p>Username</p>
+                    <small class="d-flex">Company Name</small>
+                </div>
+                <img class="ic-profile mx-3 align-self-start" src="assets/Profile.svg" alt="ic-profile">
+                <img class="ic-logout align-self-center px-3" src="assets/logout.png" alt="ic-logout">
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <nav id="sidebar">
+        <div class="sidebar-header"></div>
+        <a id="sidebarCollapse" class="nav-toggle" style="cursor: pointer;">
+            <i></i>
+        </a>
+        <ul class="list-unstyled components">
+            <li class="item" style="background: #D2D2D2;">
+                <a id="dash1" href="dashboard.html" class="menu">
+                    <img class="ic-menu bg-ic-menu" src="assets/Dashboardicon.svg" alt="ic-dashboard">
+                    <p>Dashboard</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- content -->
+    <section id="board">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="dashboard1">
+                        <div class="container">
+                            <h1>Dashboard</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div id="container-picker">
+                        <div id="picker">
+                            <img class="ic-calendar" src="assets/calendar.png" alt="ic-calendar"> &nbsp;
+                            <span>Period</span><span id="date"></span>
+                            &nbsp; <i class="fas fa-chevron-down" style="color: #757575;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="rectangle" class="container">
+                    <div class="col-lg-6 p-0 d-flex align-items-center">
+                        <p>MARKET INSIGHTS</p>
+                    </div>
+                    <div class="col-lg-6 p-0 d-flex align-items-center justify-content-end">
+                        <img src="assets/Help.png" alt="ic-help"> &nbsp;
+                        <a href="#" style="text-decoration: underline;">Click Here for Help</a>&nbsp;&nbsp;&nbsp;
+                        <i class="fas fa-chevron-up" style="color: #FFFFFF;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="turnover" class="container">
+                    <div class="bg-turnover">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <p>Sales Turnover</p>
+                            </div>
+                            <div class="col-lg-2 ml-lg-3 d-flex justify-content-end">
+                                <img class="ic-more" src="assets/Icon-More-Filled.svg" alt="ic-more">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <h3>Rp 3,600,000</h3>
+                                <small><img class="ic-downArrow" src="assets/DownArrow.svg" alt="ic-downArrow">
+                                    <span>13,8%</span> last period in products sold</small>
+                            </div>
+                            <div class="col-lg-4">
+                                <img class="ic-turnover" src="assets/SalesTurnover.svg" alt="ic-turnover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="content-dashboard" class="container">
+                    <div class="col-lg-6 pl-0">
+                        <div class="graph">
+                            <div class="selling-header mb-lg-3">
+                                <div class="row">
+                                    <div class="col-lg-10 d-flex align-items-center">
+                                        <h6>AVERAGE PURCHASE VALUE</h6>
+                                    </div>
+                                    <div class="col-lg-2 d-flex justify-content-end">
+                                        <div class="dropdown mr-lg-3">
+                                            <button class="btn btn-dropDown btn-secondary btn-sm dropdown-toggle"
+                                                type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                                                Last 6 months
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">Last 7 months</a>
+                                                <a class="dropdown-item" href="#">Last 8 months</a>
+                                                <a class="dropdown-item" href="#">Last 9 months</a>
+                                            </div>
+                                        </div>
+                                        <img class="ic-more2" src="assets/Icon-More-Filled.svg" alt="ic-more">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="selling-body" style="overflow-y: unset;
+                            height: 100%;">
+                                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 right">
+                        <div class="selling">
+                            <div class="selling-header">
+                                <div class="row">
+                                    <div class="col-lg-10 d-flex align-items-center">
+                                        <h6>BEST SELLING SKU</h6>
+                                    </div>
+                                    <div class="col-lg-2 d-flex justify-content-end">
+                                        <img class="ic-more" src="assets/Icon-More-Filled.svg" alt="ic-more">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="selling-body" id="style-2">
+                                <ul class="list-unstyled components">
+                                    <li>
+                                        <div class="row bg-product d-flex align-items-center bg-active">
+                                            <div class="col-lg-3 p-0">
+                                                <img class="img-product" src="assets/NoPath.png" alt="img-product">
+                                            </div>
+                                            <div class="col-lg-9 line-height">
+                                                <h6 class="list-header">
+                                                    [Nama Product]
+                                                </h6>
+                                                <small class="list-body">
+                                                    Rp XXX &nbsp;&nbsp; [jml terjual]
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row bg-product d-flex align-items-center">
+                                            <div class="col-lg-3 p-0">
+                                                <img class="img-product" src="assets/NoPath.png" alt="img-product">
+                                            </div>
+                                            <div class="col-lg-9 line-height">
+                                                <h6 class="list-header">
+                                                    [Nama Product]
+                                                </h6>
+                                                <small class="list-body">
+                                                    Rp XXX &nbsp;&nbsp; [jml terjual]
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row bg-product d-flex align-items-center">
+                                            <div class="col-lg-3 p-0">
+                                                <img class="img-product" src="assets/NoPath.png" alt="img-product">
+                                            </div>
+                                            <div class="col-lg-9 line-height">
+                                                <h6 class="list-header">
+                                                    [Nama Product]
+                                                </h6>
+                                                <small class="list-body">
+                                                    Rp XXX &nbsp;&nbsp; [jml terjual]
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row bg-product d-flex align-items-center">
+                                            <div class="col-lg-3 p-0">
+                                                <img class="img-product" src="assets/NoPath.png" alt="img-product">
+                                            </div>
+                                            <div class="col-lg-9 line-height">
+                                                <h6 class="list-header">
+                                                    [Nama Product]
+                                                </h6>
+                                                <small class="list-body">
+                                                    Rp XXX &nbsp;&nbsp; [jml terjual]
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row bg-product d-flex align-items-center">
+                                            <div class="col-lg-3 p-0">
+                                                <img class="img-product" src="assets/NoPath.png" alt="img-product">
+                                            </div>
+                                            <div class="col-lg-9 line-height">
+                                                <h6 class="list-header">
+                                                    [Nama Product]
+                                                </h6>
+                                                <small class="list-body">
+                                                    Rp XXX &nbsp;&nbsp; [jml terjual]
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row bg-product d-flex align-items-center">
+                                            <div class="col-lg-3 p-0">
+                                                <img class="img-product" src="assets/NoPath.png" alt="img-product">
+                                            </div>
+                                            <div class="col-lg-9 line-height">
+                                                <h6 class="list-header">
+                                                    [Nama Product]
+                                                </h6>
+                                                <small class="list-body">
+                                                    Rp XXX &nbsp;&nbsp; [jml terjual]
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="competitor">
+                            <div class="selling-header">
+                                <div class="row">
+                                    <div class="col-lg-10 d-flex align-items-center">
+                                        <h6>TOP COMPETITOR SKU</h6>
+                                    </div>
+                                    <div class="col-lg-2 d-flex justify-content-end">
+                                        <img class="ic-more" src="assets/Icon-More-Filled.svg" alt="ic-more">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="selling-body" id="style-2">
+                                <ul class="list-unstyled components">
+                                    <li>
+                                        <div class="row bg-product d-flex align-items-center bg-active">
+                                            <div class="col-lg-3 p-0">
+                                                <img class="img-product" src="assets/NoPath.png" alt="img-product">
+                                            </div>
+                                            <div class="col-lg-9 line-height">
+                                                <h6 class="list-header">
+                                                    [Nama Product]
+                                                </h6>
+                                                <small class="list-body">
+                                                    Rp XXX &nbsp;&nbsp; [jml terjual]
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row bg-product d-flex align-items-center">
+                                            <div class="col-lg-3 p-0">
+                                                <img class="img-product" src="assets/NoPath.png" alt="img-product">
+                                            </div>
+                                            <div class="col-lg-9 line-height">
+                                                <h6 class="list-header">
+                                                    [Nama Product]
+                                                </h6>
+                                                <small class="list-body">
+                                                    Rp XXX &nbsp;&nbsp; [jml terjual]
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row bg-product d-flex align-items-center">
+                                            <div class="col-lg-3 p-0">
+                                                <img class="img-product" src="assets/NoPath.png" alt="img-product">
+                                            </div>
+                                            <div class="col-lg-9 line-height">
+                                                <h6 class="list-header">
+                                                    [Nama Product]
+                                                </h6>
+                                                <small class="list-body">
+                                                    Rp XXX &nbsp;&nbsp; [jml terjual]
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row bg-product d-flex align-items-center">
+                                            <div class="col-lg-3 p-0">
+                                                <img class="img-product" src="assets/NoPath.png" alt="img-product">
+                                            </div>
+                                            <div class="col-lg-9 line-height">
+                                                <h6 class="list-header">
+                                                    [Nama Product]
+                                                </h6>
+                                                <small class="list-body">
+                                                    Rp XXX &nbsp;&nbsp; [jml terjual]
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row bg-product d-flex align-items-center">
+                                            <div class="col-lg-3 p-0">
+                                                <img class="img-product" src="assets/NoPath.png" alt="img-product">
+                                            </div>
+                                            <div class="col-lg-9 line-height">
+                                                <h6 class="list-header">
+                                                    [Nama Product]
+                                                </h6>
+                                                <small class="list-body">
+                                                    Rp XXX &nbsp;&nbsp; [jml terjual]
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="row bg-product d-flex align-items-center">
+                                            <div class="col-lg-3 p-0">
+                                                <img class="img-product" src="assets/NoPath.png" alt="img-product">
+                                            </div>
+                                            <div class="col-lg-9 line-height">
+                                                <h6 class="list-header">
+                                                    [Nama Product]
+                                                </h6>
+                                                <small class="list-body">
+                                                    Rp XXX &nbsp;&nbsp; [jml terjual]
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/all.js"></script>
+    <!-- date range picker -->
+    <script src="js/moment.min.js"></script>
+    <script src="js/daterangepicker.js"></script>
+    <!-- Graph -->
+    <script src="js/canvasjs.min.js"></script>
+    <script src="js/graph.js"></script>
+    <!-- myscript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
